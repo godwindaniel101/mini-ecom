@@ -11,20 +11,18 @@
                     <img src="/image/loader.gif" />
                 </div>
             </div>
-            <div class="row top_row" v-else>
-                <div
-                    class="col-lg-3"
-                    v-for="item in productArray.data"
-                    :key="productArray.data.id"
-                >
+            <section class="_prdts">
+                <div class="lists">
                     <router-link
+                        v-for="item in productArray.data"
+                        :key="productArray.data.id"
                         :to="{ path: '/product/preview/' + item.id }"
                         tag="div"
                     >
                         <ViewItem :item="item" v-if="item" />
                     </router-link>
                 </div>
-            </div>
+            </section>
         </div>
 
         <div class="row">
