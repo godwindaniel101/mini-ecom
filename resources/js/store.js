@@ -13,6 +13,9 @@ export const store = new Vuex.Store({
         },
         Anotterdoublegets : state =>{
             return ( state.counter + 'clicks')
-        }
+        },
+    // actions:{
+
+    // },
     }
 })

@@ -29,15 +29,17 @@ Vue.component('v-select', vSelect)
 Vue.component('Select2', Select2);
 Vue.component('vuetable', Vuetable)
 Vue.component('vuetable-pagination', VuetablePagination)
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 // Vue.prototype.$gate = new Gate(window.user);
 Vue.component('pagination', require('laravel-vue-pagination'));
 Vue.use(VueRouter)
 Vue.use(VueProgressBar, options)
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
-Vue.use(Datepicker)
-Vue.use(Vuetable)
-Vue.use(VueChatScroll)
+// Vue.use(Datepicker)
+// Vue.use(Vuetable)
+// Vue.use(VueChatScroll)
 
 //
 let Trigger = new Vue;
@@ -94,22 +96,12 @@ const router = new VueRouter({
   routes, // short for `routes: routes`
   mode: 'hash'
 })
-// router.beforeEach((to, from, next) => {
-//   // alert(to.name);
-// var token =  localStorage.getItem("access_token");
-// if(token == null || token == ''){
-//   if(to.path === '/'){
-//     next()
-//   }else{
-//     router.push({ path: '/' })
-//   }
-// }else{
-//   next();
-// }
-
-// })
+router.beforeEach((to, from, next) => {
+  // NProgress.start()
+next();
+})
 Vue.use(VueProgressBar, options);
-export const dataCheck = new Vue();
+export const dataTransfer = new Vue();
 // Vue.use(Form);
 const app = new Vue({
   el: '#app',
