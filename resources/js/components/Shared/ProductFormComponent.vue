@@ -1,5 +1,10 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid __zeroAll">
+         <div class="preloader_wrap" v-if="preloader">
+                <div class="preloader_image">
+                    <img src="/image/loader.gif">
+                </div>
+        </div>
         <div class="create_product_form">
             <form action="" class="">
                 <div class="form_wrap">
@@ -102,6 +107,7 @@ export default {
     },
     data() {
         return {
+            preloader:false,
             name: "",
             cost: "",
             image: "",
@@ -210,12 +216,14 @@ export default {
         },
         checkMode(){
             if(this.editMode){
+                this.preloader=true
                axios.get('api/product/'+this.editId+'/edit').then(({data})=>{
                    this.name = data.name
                    this.cost = data.cost
                    this.description = data.description
                    this.image = data.image
                    dataTransfer.$emit('photoEditMode' , data.image);
+                   this.preloader=false
                }).catch((e)=>{
                    console.log(e)
                });

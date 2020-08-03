@@ -2025,9 +2025,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      preloader: true,
       productDetail: {
         id: "",
         name: "",
@@ -2074,6 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/product/" + id).then(function (_ref2) {
         var data = _ref2.data;
         _this2.productDetail = data;
+        _this2.preloader = false;
       })["catch"](function (e) {
         console.log(e);
       });
@@ -2114,6 +2121,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2121,7 +2141,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      productArray: []
+      subload: false,
+      preloader: true,
+      productArray: {}
     };
   },
   methods: {
@@ -2130,7 +2152,21 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/product").then(function (_ref) {
         var data = _ref.data;
-        _this.productArray = data.data;
+        _this.productArray = data;
+        _this.preloader = false;
+      });
+    },
+    getResults: function getResults() {
+      var _this2 = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.subload = true;
+      axios.get("/api/product?page=" + page).then(function (_ref2) {
+        var data = _ref2.data;
+        _this2.productArray = data;
+        _this2.subload = false;
+      })["catch"](function (e) {
+        console.log(e);
       });
     }
   },
@@ -2406,6 +2442,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -2423,6 +2464,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      preloader: false,
       name: "",
       cost: "",
       image: "",
@@ -2542,6 +2584,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       if (this.editMode) {
+        this.preloader = true;
         axios.get('api/product/' + this.editId + '/edit').then(function (_ref3) {
           var data = _ref3.data;
           _this3.name = data.name;
@@ -2549,6 +2592,7 @@ __webpack_require__.r(__webpack_exports__);
           _this3.description = data.description;
           _this3.image = data.image;
           _app__WEBPACK_IMPORTED_MODULE_2__["dataTransfer"].$emit('photoEditMode', data.image);
+          _this3.preloader = false;
         })["catch"](function (e) {
           console.log(e);
         });
@@ -71799,7 +71843,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid" },
+    { staticClass: "container-fluid __zeroAll" },
     [_c("Nav"), _vm._v(" "), _c("router-view")],
     1
   )
@@ -71876,8 +71920,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "containr-fluid " }, [
-    _c("div", { staticClass: "nav_wrapper" }, [
+  return _c("div", { staticClass: "container-fluid __zeroAll" }, [
+    _c("div", { staticClass: "nav_wrapper __zeroAll" }, [
       _c(
         "div",
         { staticClass: "product_nav" },
@@ -71921,18 +71965,26 @@ var render = function() {
             "router-link",
             {
               staticClass: "home_icon",
-              attrs: { to: "/product/create", tag: "a" }
+              attrs: { to: "/product/create", tag: "div" }
             },
-            [_vm._v("\n            Create\n           ")]
+            [
+              _c("span", {}, [_vm._v("\n            Create\n            ")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "span_line" })
+            ]
           ),
           _vm._v(" "),
           _c(
             "router-link",
             {
               staticClass: "home_icon",
-              attrs: { to: "/product/view", tag: "a" }
+              attrs: { to: "/product/view", tag: "div" }
             },
-            [_vm._v("\n            View\n            ")]
+            [
+              _c("span", {}, [_vm._v("\n            View\n            ")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "span_line" })
+            ]
           )
         ],
         1
@@ -71962,7 +72014,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid __zeroAll" }, [
+    _vm.preloader
+      ? _c("div", { staticClass: "preloader_wrap" }, [_vm._m(0)])
+      : _vm._e(),
+    _vm._v(" "),
     _vm.productDetail != null
       ? _c("div", { staticClass: "outter_div" }, [
           _c("div", { staticClass: "preview_left" }, [
@@ -72098,7 +72154,16 @@ var render = function() {
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "preloader_image" }, [
+      _c("img", { attrs: { src: "/image/loader.gif" } })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -72121,33 +72186,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "containr-fluid" }, [
-    _c(
-      "div",
-      { staticClass: "row top_row" },
-      _vm._l(_vm.productArray, function(item) {
-        return _c(
+    _vm.preloader
+      ? _c("div", { staticClass: "preloader_wrap" }, [_vm._m(0)])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-fluid" }, [
+      _vm.subload
+        ? _c("div", { staticClass: "row top_row sub_wrap" }, [_vm._m(1)])
+        : _c(
+            "div",
+            { staticClass: "row top_row" },
+            _vm._l(_vm.productArray.data, function(item) {
+              return _c(
+                "div",
+                { key: _vm.productArray.data.id, staticClass: "col-lg-3" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { path: "/product/preview/" + item.id },
+                        tag: "div"
+                      }
+                    },
+                    [
+                      item
+                        ? _c("ViewItem", { attrs: { item: item } })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            }),
+            0
+          )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-lg-12 bottom_row" }, [
+        _c(
           "div",
-          { key: _vm.productArray.id, staticClass: "col-lg-3" },
+          { staticClass: "paginate" },
           [
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  to: { path: "/product/preview/" + item.id },
-                  tag: "div"
-                }
-              },
-              [item ? _c("ViewItem", { attrs: { item: item } }) : _vm._e()],
-              1
-            )
+            _c("pagination", {
+              attrs: { data: _vm.productArray },
+              on: { "pagination-change-page": _vm.getResults }
+            })
           ],
           1
         )
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _vm._m(0)
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -72155,10 +72246,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 bottom_row" }, [
-        _c("div", { staticClass: "paginate" })
-      ])
+    return _c("div", { staticClass: "preloader_image" }, [
+      _c("img", { attrs: { src: "/image/loader.gif" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "preloader_image" }, [
+      _c("img", { attrs: { src: "/image/loader.gif" } })
     ])
   }
 ]
@@ -72403,7 +72500,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
+  return _c("div", { staticClass: "container-fluid __zeroAll" }, [
+    _vm.preloader
+      ? _c("div", { staticClass: "preloader_wrap" }, [_vm._m(0)])
+      : _vm._e(),
+    _vm._v(" "),
     _c("div", { staticClass: "create_product_form" }, [
       _c("form", { attrs: { action: "" } }, [
         _c("div", { staticClass: "form_wrap" }, [
@@ -72613,7 +72714,16 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "preloader_image" }, [
+      _c("img", { attrs: { src: "/image/loader.gif" } })
+    ])
+  }
+]
 render._withStripped = true
 
 

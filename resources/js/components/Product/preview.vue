@@ -1,5 +1,10 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid __zeroAll">
+        <div class="preloader_wrap" v-if="preloader">
+                <div class="preloader_image">
+                    <img src="/image/loader.gif">
+                </div>
+        </div>
         <div class="outter_div" v-if="productDetail != null">
             <!-- //this will only show after loading -->
             <div class="preview_left">
@@ -43,6 +48,7 @@
 export default {
     data() {
         return {
+            preloader:true,
             productDetail: {
                 id: "",
                 name: "",
@@ -85,6 +91,7 @@ export default {
                 .get("/api/product/" + id)
                 .then(({ data }) => {
                     this.productDetail = data;
+                    this.preloader=false
                 })
                 .catch(e => {
                     console.log(e);

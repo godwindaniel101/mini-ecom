@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::paginate(10);
+        $product = Product::paginate(1);
         return response()->json($product, 201);
     }
 
@@ -54,7 +54,7 @@ class ProductController extends Controller
         $image_extenstion = explode('/',explode(':' , substr($request->image, 0, strpos($request->image, ';')))[1])[1];
         //the above function is to get the image extenstion
         $new_image_name = $image_name .'.'. $image_extenstion;
-        Image::make($request->image)->resize(1000, 1000)->save(public_path('/image/products/').$new_image_name);
+        Image::make($request->image)->save(public_path('/image/products/').$new_image_name);
         //resizing to 200 by 200 for better front end view and storing image
         // $new_image_name = $this->moveImage($request->image);
         $product = new Product([

@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="app">
-        <div style="width:100%;height:100vh">
+        <div style="width:100%;height:auto;padding:0;margin:0;">
             <vue-progress-bar></vue-progress-bar>
             <router-view></router-view>
         </div>
