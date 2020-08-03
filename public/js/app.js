@@ -2067,6 +2067,88 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7232,7 +7314,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.dropzone[data-v-21fd5c10]{\r\n    height: 300px;\r\n    padding:10px;\r\n    position:relative;\r\n    width:100%;\r\n    display:flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    cursor:pointer;\r\n    outline:2px dashed grey;\r\n    outline-offset:-10px;\r\n    background:rgb(228, 228, 240);\r\n    color:grey;\r\n    overflow:hidden;\n}\n.layer[data-v-21fd5c10]{\r\n    position:absolute;\r\n    overflow:hidden;\r\n    display:flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width:90%;\r\n    height:90%;\n}\n.layer_3[data-v-21fd5c10], .layer_2[data-v-21fd5c10]{\r\n    z-index:1;\n}\n.layer_3 img[data-v-21fd5c10]{\r\n    width:100%;\r\n    height:auto;\r\n    margin:auto;\n}\n.cancel_photo[data-v-21fd5c10]{\r\n    position: absolute;\r\n    width: 25px;\r\n    height: 25px;\r\n    display: flex;\r\n    justify-content: center;\r\n    top: 10px;\r\n    align-items: center;\r\n    /* border: 1px solid red; */\r\n    right: 10px;\r\n    z-index:50;\n}\n.layer_1[data-v-21fd5c10]{\r\n     z-index:5;\r\n     background:none;\n}\n.input_field[data-v-21fd5c10]{\r\n    opacity:0;\r\n    z-index:1;\r\n    width:100%;\r\n    height:100%;\r\n    border:1px solid green;\r\n    cursor: pointer;\r\n    position:absolute\n}\n.uploaded[data-v-21fd5c10]{\r\n    opacity:0;\r\n    z-index:20;\r\n    width:100%;\r\n    height:200px;\r\n    cursor: pointer;\r\n    position:absolute\n}\n.dropzone[data-v-21fd5c10]:hover{\r\n    background:rgb(244, 244, 248)\n}\n.call-to-action[data-v-21fd5c10]{\r\n    font-size:1.2rem\n}\r\n", ""]);
+exports.push([module.i, "\n.dropzone[data-v-21fd5c10]{\r\n    height: 300px;\r\n    padding:10px;\r\n    position:relative;\r\n    width:100%;\r\n    display:flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    cursor:pointer;\r\n    outline:2px dashed grey;\r\n    outline-offset:-10px;\r\n    /* background:rgb(228, 228, 240); */\r\n    color:grey;\r\n    overflow:hidden;\n}\n.layer[data-v-21fd5c10]{\r\n    position:absolute;\r\n    overflow:hidden;\r\n    display:flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width:90%;\r\n    height:90%;\n}\n.layer_3[data-v-21fd5c10], .layer_2[data-v-21fd5c10]{\r\n    z-index:1;\n}\n.layer_3 img[data-v-21fd5c10]{\r\n    width:100%;\r\n    height:auto;\r\n    margin:auto;\n}\n.cancel_photo[data-v-21fd5c10]{\r\n    position: absolute;\r\n    width: 25px;\r\n    height: 25px;\r\n    display: flex;\r\n    justify-content: center;\r\n    top: 10px;\r\n    align-items: center;\r\n    /* border: 1px solid red; */\r\n    right: 10px;\r\n    z-index:50;\n}\n.layer_1[data-v-21fd5c10]{\r\n     z-index:5;\r\n     background:none;\n}\n.input_field[data-v-21fd5c10]{\r\n    opacity:0;\r\n    z-index:1;\r\n    width:100%;\r\n    height:100%;\r\n    /* border:1px solid green; */\r\n    cursor: pointer;\r\n    position:absolute\n}\n.uploaded[data-v-21fd5c10]{\r\n    opacity:0;\r\n    z-index:20;\r\n    width:100%;\r\n    height:200px;\r\n    cursor: pointer;\r\n    position:absolute\n}\n.dropzone[data-v-21fd5c10]:hover{\r\n      background:rgb(244, 244, 248)\n}\n.call-to-action[data-v-21fd5c10]{\r\n    font-size:1.2rem\n}\r\n", ""]);
 
 // exports
 
@@ -72115,171 +72197,188 @@ var render = function() {
     _vm._v(" "),
     _vm.productDetail != null
       ? _c("div", { staticClass: "outter_div" }, [
-          _c("div", { staticClass: "preview_left" }, [
-            _c("div", { staticClass: "preview_image" }, [
+          _c("section", { staticClass: "_prdt" }, [
+            _c("div", { staticClass: "_mg" }, [
               _vm.productDetail.image
                 ? _c("img", { attrs: { src: _vm.productDetail.image } })
                 : _vm._e()
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "preview_right" }, [
-            _c(
-              "div",
-              { staticClass: "admin" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "go_back",
-                    attrs: { to: "/product/view", tag: "div" }
-                  },
-                  [
-                    _c(
-                      "svg",
-                      {
-                        staticClass:
-                          "svg-inline--fa fa-arrow-left fa-w-14 fa-3x",
-                        attrs: {
-                          width: "30",
-                          height: "30",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 448 512"
-                        }
-                      },
-                      [
-                        _c("path", {
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "_detl" }, [
+              _c(
+                "div",
+                { staticClass: "_tpbt" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "_bck",
+                      attrs: { to: "/product/view", tag: "button" }
+                    },
+                    [
+                      _c(
+                        "svg",
+                        {
+                          staticClass:
+                            "icon icon-tabler icon-tabler-arrow-narrow-left",
                           attrs: {
-                            fill: "darkgreen",
-                            d:
-                              "M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+                            xmlns: "http://www.w3.org/2000/svg",
+                            width: "25",
+                            height: "25",
+                            viewBox: "0 0 24 24",
+                            "stroke-width": "1.5",
+                            stroke: "#000",
+                            fill: "none",
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round"
                           }
-                        })
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "admin_action" },
-                  [
-                    _c(
-                      "span",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteProduct(_vm.productDetail.id)
+                        },
+                        [
+                          _c("path", {
+                            attrs: { stroke: "none", d: "M0 0h24v24H0z" }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "5", y1: "12", x2: "19", y2: "12" }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "5", y1: "12", x2: "9", y2: "16" }
+                          }),
+                          _vm._v(" "),
+                          _c("line", {
+                            attrs: { x1: "5", y1: "12", x2: "9", y2: "8" }
+                          })
+                        ]
+                      ),
+                      _vm._v("\n                Back\n            ")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "_tdyd" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "_pbh",
+                          attrs: {
+                            to: {
+                              path: "/product/edit/" + _vm.productDetail.id
+                            },
+                            tag: "button"
                           }
-                        }
-                      },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            staticClass:
-                              "svg-inline--fa fa-trash fa-w-14 fa-3x",
-                            attrs: {
-                              width: "30",
-                              height: "30",
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 448 512"
-                            }
-                          },
-                          [
-                            _c("path", {
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "svg-inline--fa fa-edit fa-w-18 fa-3x",
                               attrs: {
-                                fill: "red",
-                                d:
-                                  "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                                width: "15",
+                                height: "15",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 576 512"
                               }
-                            })
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: { path: "/product/edit/" + _vm.productDetail.id },
-                          tag: "span"
-                        }
-                      },
-                      [
-                        _c(
-                          "svg",
-                          {
-                            staticClass: "svg-inline--fa fa-edit fa-w-18 fa-3x",
-                            attrs: {
-                              width: "30",
-                              height: "30",
-                              xmlns: "http://www.w3.org/2000/svg",
-                              viewBox: "0 0 576 512"
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  fill: "blue",
+                                  d:
+                                    "M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v("\n                Edit\n            ")
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "_pbd",
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteProduct(_vm.productDetail.id)
                             }
-                          },
-                          [
-                            _c("path", {
+                          }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass:
+                                "svg-inline--fa fa-trash fa-w-14 fa-3x",
                               attrs: {
-                                fill: "blue",
-                                d:
-                                  "M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+                                width: "15",
+                                height: "15",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                viewBox: "0 0 448 512"
                               }
-                            })
-                          ]
-                        )
-                      ]
-                    )
-                  ],
-                  1
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  fill: "red",
+                                  d:
+                                    "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v("\n                Delete\n            ")
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "_name" }, [
+                _vm._v(
+                  "\n           " +
+                    _vm._s(_vm.productDetail.name) +
+                    "\n        "
                 )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "preview_id _mxy" }, [
-              _c("span", [_vm._v("Id")]),
+              ]),
               _vm._v(" "),
-              _c("br"),
-              _vm._v(
-                "\n                " +
-                  _vm._s(_vm.productDetail.id) +
-                  "\n            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "preview_name _mxy" }, [
-              _c("span", [_vm._v("Name")]),
+              _c("div", { staticClass: "_cat" }, [
+                _vm._v("\n            Name\n        ")
+              ]),
               _vm._v(" "),
-              _c("br"),
-              _vm._v(
-                "\n                " +
-                  _vm._s(_vm.productDetail.name) +
-                  "\n            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "preview_cost _mxy" }, [
-              _c("span", [_vm._v("Cost")]),
+              _c("div", { staticClass: "_prc" }, [
+                _c("div", { staticClass: "lbl" }, [
+                  _vm._v("\n                Cost\n            ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "_val" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.productDetail.cost) +
+                      "\n\n            "
+                  )
+                ])
+              ]),
               _vm._v(" "),
-              _c("br"),
-              _vm._v(
-                "\n                ₦ " +
-                  _vm._s(_vm.productDetail.cost) +
-                  "\n            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "preview_Description _mxy" }, [
-              _c("span", [_vm._v("Description")]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(
-                "\n                " +
-                  _vm._s(_vm.productDetail.description) +
-                  "\n            "
-              )
+              _c("div", { staticClass: "_prc" }, [
+                _c("div", { staticClass: "lbl" }, [
+                  _vm._v("\n                Description\n            ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "_val _dsc" }, [
+                  _vm._v(
+                    "\n             " +
+                      _vm._s(_vm.productDetail.description) +
+                      "\n             "
+                  )
+                ])
+              ])
             ])
           ])
         ])
@@ -72974,7 +73073,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "list_more" }, [
-      _c("button", { staticClass: "btn btn-success" }, [
+      _c("button", { staticClass: "_bcm" }, [
         _vm._v("\n                            More\n                        ")
       ])
     ])

@@ -110,7 +110,7 @@ export default {
     cursor:pointer;
     outline:2px dashed grey;
     outline-offset:-10px;
-    background:rgb(228, 228, 240);
+    /* background:rgb(228, 228, 240); */
     color:grey;
     overflow:hidden;
 }
@@ -153,7 +153,7 @@ export default {
     z-index:1;
     width:100%;
     height:100%;
-    border:1px solid green;
+    /* border:1px solid green; */
     cursor: pointer;
     position:absolute
 }
@@ -166,7 +166,7 @@ export default {
     position:absolute
 }
 .dropzone:hover{
-    background:rgb(244, 244, 248)
+      background:rgb(244, 244, 248)
 }
 .call-to-action{
     font-size:1.2rem

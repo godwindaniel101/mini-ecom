@@ -20,7 +20,7 @@
                             >
                         </div>
                         <div class="list_more">
-                            <button class="btn btn-success">
+                            <button class="_bcm">
                                 More
                             </button>
                         </div>
