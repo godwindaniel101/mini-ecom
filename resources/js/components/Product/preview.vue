@@ -10,7 +10,7 @@
             <div class="preview_left">
                 <div class="preview_image">
                     <img
-                        :src="'/image/products/' + productDetail.image"
+                        :src="productDetail.image"
                         v-if="productDetail.image"
                     />
                 </div>

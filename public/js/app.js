@@ -2325,15 +2325,16 @@ __webpack_require__.r(__webpack_exports__);
       reader.readAsDataURL(file);
     },
     editModePhoto: function editModePhoto(imagename) {
-      this.photo_data = '/image/products/' + imagename;
-      this.uploaded = true;
+      this.photo_data = imagename;
+      this.uploaded = true; //setting a preview of old image
     }
   },
   created: function created() {
     var _this2 = this;
 
     _app__WEBPACK_IMPORTED_MODULE_0__["dataTransfer"].$on("resetProduct", function () {
-      _this2.resetPhoto();
+      _this2.resetPhoto(); //reset instruction
+
     });
     _app__WEBPACK_IMPORTED_MODULE_0__["dataTransfer"].$on("photoEditMode", function (imagename) {
       _this2.editModePhoto(imagename);
@@ -72024,9 +72025,7 @@ var render = function() {
           _c("div", { staticClass: "preview_left" }, [
             _c("div", { staticClass: "preview_image" }, [
               _vm.productDetail.image
-                ? _c("img", {
-                    attrs: { src: "/image/products/" + _vm.productDetail.image }
-                  })
+                ? _c("img", { attrs: { src: _vm.productDetail.image } })
                 : _vm._e()
             ])
           ]),
@@ -72747,7 +72746,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "list_wrapper" }, [
     _c("div", { staticClass: "list_image" }, [
-      _c("img", { attrs: { src: "/image/products/" + _vm.item.image } })
+      _c("img", { attrs: { src: _vm.item.image } })
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "text_wrap" }, [

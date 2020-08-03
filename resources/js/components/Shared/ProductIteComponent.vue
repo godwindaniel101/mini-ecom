@@ -1,7 +1,7 @@
 <template>
     <div class="list_wrapper">
           <div class="list_image">
-                        <img :src="'/image/products/' + item.image" />
+                        <img :src="item.image" />
                     </div>
                     <div class="text_wrap">
                         <div class="list_id">

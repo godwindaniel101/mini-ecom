@@ -74,13 +74,15 @@ export default {
               reader.readAsDataURL(file);
             },
             editModePhoto(imagename){
-                this.photo_data = '/image/products/'+imagename
+                this.photo_data = imagename
                 this.uploaded = true;
+                //setting a preview of old image
             }
     },
     created(){
         dataTransfer.$on("resetProduct", () => {
             this.resetPhoto();
+            //reset instruction
         });
         dataTransfer.$on("photoEditMode", (imagename) => {
             this.editModePhoto(imagename);

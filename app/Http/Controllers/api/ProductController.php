@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::paginate(1);
+        $product = Product::paginate(10);
         return response()->json($product, 201);
     }
 
@@ -49,19 +49,15 @@ class ProductController extends Controller
         ]);
         //backend validation to prevent site injection
        
-        $image_name = time();
-        //here time is used as the new image name
-        $image_extenstion = explode('/',explode(':' , substr($request->image, 0, strpos($request->image, ';')))[1])[1];
-        //the above function is to get the image extenstion
-        $new_image_name = $image_name .'.'. $image_extenstion;
-        Image::make($request->image)->save(public_path('/image/products/').$new_image_name);
-        //resizing to 200 by 200 for better front end view and storing image
+        
         // $new_image_name = $this->moveImage($request->image);
+
+        //the above function will work when not using heroku
         $product = new Product([
             'name' => $request->name,
             'cost' => $request->cost,
             'description' => $request->description,
-            'image' => $new_image_name
+            'image' => $request->image
         ]);
         $product->save();
         
@@ -111,16 +107,17 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::where('id',$id);
-        if($product->first()->image == $request->image){
-           $new_image_name = $request->image;
-        }else{
-            $new_image_name = $this->moveImage($request->image);
-        }
+        // if($product->first()->image == $request->image){
+        //    $new_image_name = $request->image;
+        // }else{
+        //     $new_image_name = $this->moveImage($request->image);
+        // }
+        //above is not applicable to heroku
         $product->update([
             'name' => $request->name,
             'cost' => $request->cost,
             'description' => $request->description,
-            'image'=> $new_image_name
+            'image'=> $request->image,
         ]);
         return response()->json([
             'message' => 'Product Successfully Updated!',
