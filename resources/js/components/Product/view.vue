@@ -5,13 +5,15 @@
                 <img src="/image/loader.gif" />
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row top_row sub_wrap" v-if="subload">
-                <div class="preloader_image">
+        <div class="_hgyst">
+            
+            <div class="container-fluid">
+                <div class=" top_row sub_wrap" v-if="subload">
+                    <div class="preloader_image">
                     <img src="/image/loader.gif" />
                 </div>
             </div>
-            <section class="_prdts">
+            <section class="_prdts " v-if="!subload">
                 <div class="lists">
                     <router-link
                         v-for="item in productArray.data"
@@ -24,15 +26,13 @@
                 </div>
             </section>
         </div>
-
-        <div class="row">
-            <div class="col-lg-12 bottom_row">
+        </div>
+        <div class="_row_x">
                 <div class="paginate">
                     <pagination
                         :data="productArray"
                         @pagination-change-page="getResults"
                     ></pagination>
-                </div>
             </div>
         </div>
     </div>

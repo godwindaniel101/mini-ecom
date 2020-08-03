@@ -29,16 +29,22 @@
                         </div>
                     </div>
                     <div class="toggler">
-                        <router-link
-                            to="/product/create"
-                            tag="a"
-                            class="_nav_m"
-                        >
-                            Create
-                        </router-link>
-                        <router-link to="/product/view" tag="a" class="_nav_m">
-                            View
-                        </router-link>
+                        <div class="toggler_x">
+                            <router-link
+                                to="/product/create"
+                                tag="a"
+                                class="_btn_r _secondary"
+                            >
+                                Create
+                            </router-link>
+                            <router-link
+                                to="/product/view"
+                                tag="a"
+                                class="_btn_r _primary"
+                            >
+                                View
+                            </router-link>
+                        </div>
                     </div>
                 </div>
             </nav>

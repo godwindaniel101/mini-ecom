@@ -331,7 +331,12 @@ input[type="color"] {
 ._prdt ._mg {
     overflow: hidden;
 }
-
+._hgyst{
+    min-height:80vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 ._detl {
     padding: 1rem 1rem;
     overflow: auto;
@@ -566,7 +571,12 @@ nav {
 .toggler {
     display: none;
 }
-
+.toggler_x{
+    display: flex;
+    flex-direction: row;  
+    margin-right:150px;
+    color:center;
+}
 ._nav-lg .acct {
     margin-left: auto;
 }
@@ -673,7 +683,7 @@ nav {
         display: inline-flex;
     }
     .toggler .router-link-exact-active {
-        color: blue;
+        color: green;
     }
     ._nav-lg .toggler span {
         display: block;

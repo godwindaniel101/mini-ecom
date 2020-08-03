@@ -72170,34 +72170,40 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "toggler" },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "_nav_m",
-                  attrs: { to: "/product/create", tag: "a" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Create\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "_nav_m",
-                  attrs: { to: "/product/view", tag: "a" }
-                },
-                [_vm._v("\n                        View\n                    ")]
-              )
-            ],
-            1
-          )
+          _c("div", { staticClass: "toggler" }, [
+            _c(
+              "div",
+              { staticClass: "toggler_x" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "_btn_r _secondary",
+                    attrs: { to: "/product/create", tag: "a" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Create\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "_btn_r _primary",
+                    attrs: { to: "/product/view", tag: "a" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            View\n                        "
+                    )
+                  ]
+                )
+              ],
+              1
+            )
+          ])
         ])
       ])
     ])
@@ -72464,48 +72470,54 @@ var render = function() {
       ? _c("div", { staticClass: "preloader_wrap" }, [_vm._m(0)])
       : _vm._e(),
     _vm._v(" "),
-    _c("div", { staticClass: "container-fluid" }, [
-      _vm.subload
-        ? _c("div", { staticClass: "row top_row sub_wrap" }, [_vm._m(1)])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("section", { staticClass: "_prdts" }, [
-        _c(
-          "div",
-          { staticClass: "lists" },
-          _vm._l(_vm.productArray.data, function(item) {
-            return _c(
-              "router-link",
-              {
-                key: _vm.productArray.data.id,
-                attrs: {
-                  to: { path: "/product/preview/" + item.id },
-                  tag: "div"
-                }
-              },
-              [item ? _c("ViewItem", { attrs: { item: item } }) : _vm._e()],
-              1
-            )
-          }),
-          1
-        )
+    _c("div", { staticClass: "_hgyst" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _vm.subload
+          ? _c("div", { staticClass: " top_row sub_wrap" }, [_vm._m(1)])
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.subload
+          ? _c("section", { staticClass: "_prdts " }, [
+              _c(
+                "div",
+                { staticClass: "lists" },
+                _vm._l(_vm.productArray.data, function(item) {
+                  return _c(
+                    "router-link",
+                    {
+                      key: _vm.productArray.data.id,
+                      attrs: {
+                        to: { path: "/product/preview/" + item.id },
+                        tag: "div"
+                      }
+                    },
+                    [
+                      item
+                        ? _c("ViewItem", { attrs: { item: item } })
+                        : _vm._e()
+                    ],
+                    1
+                  )
+                }),
+                1
+              )
+            ])
+          : _vm._e()
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 bottom_row" }, [
-        _c(
-          "div",
-          { staticClass: "paginate" },
-          [
-            _c("pagination", {
-              attrs: { data: _vm.productArray },
-              on: { "pagination-change-page": _vm.getResults }
-            })
-          ],
-          1
-        )
-      ])
+    _c("div", { staticClass: "_row_x" }, [
+      _c(
+        "div",
+        { staticClass: "paginate" },
+        [
+          _c("pagination", {
+            attrs: { data: _vm.productArray },
+            on: { "pagination-change-page": _vm.getResults }
+          })
+        ],
+        1
+      )
     ])
   ])
 }
