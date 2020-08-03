@@ -107,11 +107,14 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product = Product::where('id',$id);
+
+        // 
         // if($product->first()->image == $request->image){
         //    $new_image_name = $request->image;
         // }else{
         //     $new_image_name = $this->moveImage($request->image);
         // }
+         
         //above is not applicable to heroku
         $product->update([
             'name' => $request->name,

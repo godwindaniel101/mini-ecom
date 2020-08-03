@@ -16,7 +16,7 @@
                         </div>
                         <div class="list_cost">
                             <span class="list_naira"
-                                >#<span>{{ item.cost }}</span></span
+                                >₦<span> {{ item.cost }}</span></span
                             >
                         </div>
                         <div class="list_more">

@@ -1,14 +1,15 @@
 <template>
     <div class="container-fluid __zeroAll">
-        <Nav/>
-    <router-view></router-view>
+        <Nav />
+        <router-view></router-view>
+        <!-- base directory to all folders -->
     </div>
 </template>
 <script>
-import Nav from './nav'
+import Nav from "./nav";
 export default {
-    components:{
+    components: {
         Nav
     }
-}
+};
 </script>

@@ -5,17 +5,12 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state : {
-        counter:0,
+        adminstat:0,
     },
     getters:{
-        doublegets : state =>{
-            return ( state.counter * 2)
+        adminMode : state =>{
+            return ( state.adminstat)
+            //for admin moode
         },
-        Anotterdoublegets : state =>{
-            return ( state.counter + 'clicks')
-        },
-    // actions:{
-
-    // },
     }
 })

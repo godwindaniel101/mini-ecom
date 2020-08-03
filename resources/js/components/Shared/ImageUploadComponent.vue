@@ -4,7 +4,14 @@
             <input type="file" class="input_field" @change="uploadImage" /> 
         </div>
         <div class="layer layer_2" v-if="!uploaded">
-            <p>Upload Product Image</p>
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-circle" width="56" height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"/>
+                            <circle cx="12" cy="12" r="9" />
+                            <line x1="12" y1="8" x2="8" y2="12" />
+                            <line x1="12" y1="8" x2="12" y2="16" />
+                            <line x1="16" y1="12" x2="12" y2="8" />
+                          </svg>
+                          Upload Image
         </div>
          <div class="cancel_photo" v-if="uploaded" @click="resetPhoto">
                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11 fa-3x"><path fill="red" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class=""></path></svg>
@@ -93,7 +100,7 @@ export default {
 </script>
 <style scoped>
 .dropzone{
-    height: 400px;
+    height: 300px;
     padding:10px;
     position:relative;
     width:100%;
