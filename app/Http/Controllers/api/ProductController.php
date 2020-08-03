@@ -49,13 +49,19 @@ class ProductController extends Controller
         ]);
         //backend validation to prevent site injection
        
-        
+        $image_name = time();
+        //here time is used as the new image name
+        $image_extenstion = explode('/',explode(':' , substr($request->image, 0, strpos($request->image, ';')))[1])[1];
+        //the above function is to get the image extenstion
+        $new_image_name = $image_name .'.'. $image_extenstion;
+        Image::make($request->image)->resize(1000, 1000)->save(public_path('image/products/').$new_image_name);
+        //resizing to 200 by 200 for better front end view and storing image
         // $new_image_name = $this->moveImage($request->image);
         $product = new Product([
             'name' => $request->name,
             'cost' => $request->cost,
             'description' => $request->description,
-            'image' => '$new_image_name'
+            'image' => $new_image_name
         ]);
         $product->save();
         
