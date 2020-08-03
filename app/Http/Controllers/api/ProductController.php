@@ -50,12 +50,12 @@ class ProductController extends Controller
         //backend validation to prevent site injection
        
         
-        $new_image_name = $this->moveImage($request->image);
+        // $new_image_name = $this->moveImage($request->image);
         $product = new Product([
             'name' => $request->name,
             'cost' => $request->cost,
             'description' => $request->description,
-            'image' => $new_image_name
+            'image' => '$new_image_name'
         ]);
         $product->save();
         
