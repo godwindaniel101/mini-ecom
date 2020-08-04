@@ -73,7 +73,7 @@ export default {
                 Extension == "jpeg" ||
                 Extension == "jpg"
             ) {
-                if (Size < 1024) {
+                if (Size < 1048576) {
                     return true;
                 } else {
                     Swal.fire({

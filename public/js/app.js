@@ -2460,7 +2460,7 @@ __webpack_require__.r(__webpack_exports__);
       var Extension = Filename.split(".").pop(); //validate image size and type
 
       if (Extension == "gif" || Extension == "png" || Extension == "bmp" || Extension == "jpeg" || Extension == "jpg") {
-        if (Size < 1024) {
+        if (Size < 1048576) {
           return true;
         } else {
           Swal.fire({
