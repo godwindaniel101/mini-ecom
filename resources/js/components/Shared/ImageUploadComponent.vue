@@ -73,13 +73,13 @@ export default {
                 Extension == "jpeg" ||
                 Extension == "jpg"
             ) {
-                if (Size < 2097152) {
+                if (Size < 1024) {
                     return true;
                 } else {
                     Swal.fire({
                         icon: "error",
                         title: "Oops...",
-                        text: "Image Size Too Large!"
+                        text: "Image Size Above 1MB!"
                     });
                     return false;
                 }
