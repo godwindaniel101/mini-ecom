@@ -577,6 +577,9 @@ nav {
     margin-right:150px;
     color:center;
 }
+.toggler_x ._btn_r{
+    margin:auto 5px;
+}
 ._nav-lg .acct {
     margin-left: auto;
 }
@@ -682,8 +685,9 @@ nav {
         position: relative;
         display: inline-flex;
     }
+    
     .toggler .router-link-exact-active {
-        color: green;
+        color: orangered;
     }
     ._nav-lg .toggler span {
         display: block;
@@ -1272,6 +1276,7 @@ input[type="color"] {
 
 ._prdts .lists {
     display: flex;
+    width:100%;
     flex-flow: row wrap;
     justify-content: space-between;
 }

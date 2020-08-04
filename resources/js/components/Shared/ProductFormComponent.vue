@@ -53,7 +53,7 @@
                                             'is-invalid': $v.cost.$error
                                         }"
                                     />
-                                    <div class="invalid" v-if="$v.image.$error">
+                                    <div class="invalid" v-if="$v.cost.$error">
                                         Please Enter Cost
                                     </div>
                                 </div>
@@ -156,6 +156,7 @@ export default {
             this.image = "";
             this.description = "";
             dataTransfer.$emit("resetProduct");
+            this.$v.$reset()
         },
         updateProduct() {
             var id = this.editId;

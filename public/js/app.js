@@ -2686,6 +2686,7 @@ __webpack_require__.r(__webpack_exports__);
       this.image = "";
       this.description = "";
       _app__WEBPACK_IMPORTED_MODULE_2__["dataTransfer"].$emit("resetProduct");
+      this.$v.$reset();
     },
     updateProduct: function updateProduct() {
       var _this = this;
@@ -72860,7 +72861,7 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _vm.$v.image.$error
+                  _vm.$v.cost.$error
                     ? _c("div", { staticClass: "invalid" }, [
                         _vm._v(
                           "\n                                    Please Enter Cost\n                                "
